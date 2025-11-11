@@ -1,24 +1,16 @@
 package main
 
 import (
-	"encoding/csv"
 	"fmt"
-	"math/rand"
-	"os"
+	wb "hangman/data"
 )
 
 func main() {
-	file, err := os.Open("wordbank.csv")
-	if err != nil {
-		fmt.Println(err)
-	}
-	reader := csv.NewReader(file)
+	word := wb.GetNewWord()
 
-	records, _ := reader.ReadAll()
+	fmt.Println(word)
 
-	fmt.Println(records)
-
-	word := records[rand.Intn(len(records))][0]
+	word = wb.GetNewWord()
 
 	fmt.Println(word)
 }
