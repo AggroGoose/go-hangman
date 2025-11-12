@@ -1,24 +1,15 @@
 package main
 
 import (
-	"fmt"
-	wb "hangman/data"
 	"hangman/game"
 )
 
 func main() {
-	word := wb.GetNewWord()
+	gb := game.NewGame()
 
-	fmt.Println(word)
+	gb.DisplayWord()
 
-	word = wb.GetNewWord()
+	gb = game.NewGame()
 
-	fmt.Println(word)
-
-	game.HangStart()
-	game.HangOne()
-	game.HangTwo()
-	game.HangThree()
-	game.HangFour()
-	game.HangFive()
+	gb.DisplayWord()
 }
