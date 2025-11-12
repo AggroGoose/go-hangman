@@ -16,8 +16,6 @@ func GetNewWord() string {
 
 	records, _ := reader.ReadAll()
 
-	fmt.Println(records)
-
 	word := records[rand.Intn(len(records))][0]
 
 	if len(word) > 0 {
