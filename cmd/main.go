@@ -1,15 +1,25 @@
 package main
 
 import (
+	"fmt"
 	"hangman/game"
 )
 
 func main() {
-	gb := game.NewGame()
+	isRunning := true
 
-	gb.DisplayWord()
+	for isRunning {
+		fmt.Println("Welcome to Hangman!")
+		fmt.Println("If you would like to start a new game type 'start' else enter 'quit': ")
+		response := ""
+		fmt.Scanln(&response)
 
-	gb = game.NewGame()
-
-	gb.DisplayWord()
+		if response == "quit" {
+			isRunning = false
+		}
+		if response == "start" {
+			gb := game.NewGame()
+			gb.StartGame()
+		}
+	}
 }
